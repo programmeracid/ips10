@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Smartwatch Shop</title>
+    <style>
+
+        body{
+            background : rgb(40, 40, 40);
+            font-weight : 500;
+            font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        .prod-name {
+            font-size: 25px;
+            color : white;
+
+        }
+
+        .prod-cost {
+            font-size: 25px;
+            color: rgb(0, 228, 0);
+        }
+
+        .product img {
+            margin-bottom: 10px;
+        }
+
+        .prod-tool-tip {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        .product {
+            display: inline-block;
+            position: relative;
+            border: 0px solid red;
+            background : rgb(197, 197, 197);
+            width : 300px;
+            padding: 15px;
+            border-radius: 40px;
+            
+        }
+
+        .product input {
+            width: 50px;
+            height: 30px;
+            position: absolute;
+            right: 30px;
+        }
+
+        .product img {
+            transition: 0.3s;
+            mix-blend-mode: multiply;
+            
+        }
+
+        .product:hover .prod-tool-tip {
+            opacity: 1;
+        }
+
+        .product:hover img {
+            filter: blur(2px);
+        }
+
+        .products-main {
+            display : flex;
+            flex-direction : column;
+        }
+
+        .prod-row{
+            display : flex;
+            justify-content: center;
+            border : 0px solid yellow;
+        }
+
+        .Products {
+            display : inline-block;
+            background : rgb(72, 72, 72);
+            border: 0px solid blue;
+            box-shadow : 0 0 10px  black;
+            border-radius : 20px;
+            
+        }
+
+        .sub-btn{
+            display : flex;
+            justify-content: center;
+            margin : 40px 0;
+        }
+
+        .sub-btn button{
+            
+            font-size : 30px;
+            padding : 10px;
+        }
+
+        .sub-btn button:hover{
+            cursor:pointer;
+        }
+
+        #invoice{
+            font-family:'Courier New';
+            margin : 50px 50px;
+            display : grid;
+            text-align: center;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(3,1fr);
+            font-size : 20px;
+            background : rgb(72, 72, 72);
+            color : whitesmoke;
+        }
+
+        #invoice-final{
+            font-family:'Courier New';
+            font-size : 30px;
+            background : rgb(72, 72, 72);
+            color : whitesmoke;
+            margin : 50px;
+            display : flex;
+            flex-direction : row;
+            justify-content: space-evenly;
+            text-align : center;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="products-main">
+        <div class = "prod-row">
+        <fieldset class="Products">
+            <legend class="prod-name">Apple Watch</legend>
+            <div class="product" id="product">
+                <img src="1.webp" height = "300px"><br>
+                <label class="prod-cost">$299</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Apple Watch is a smartwatch developed by Apple Inc.
+                </div>
+            </div>
+            
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">Samsung Galaxy Watch</legend>
+            <div class="product" id="product">
+                <img src="2.webp" height="300px"><br>
+                <label class="prod-cost">$249</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Samsung Galaxy Watch is a line of smartwatches developed by Samsung Electronics.
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">Fitbit Versa</legend>
+            <div class="product" id="product">
+                <img src="3.webp" height="300px"><br>
+                <label class="prod-cost">$179</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Fitbit Versa is a smartwatch developed by Fitbit Inc.
+                </div>
+            </div>
+        </fieldset>
+        </div>
+        <div class="prod-row">
+        <fieldset class="Products">
+            <legend class="prod-name">Garmin Forerunner</legend>
+            <div class="product" id="product">
+                <img src="4.webp" height="300px"><br>
+                <label class="prod-cost">$199</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Garmin Forerunner is a series of smartwatches developed by Garmin Ltd.
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">Huawei Watch GT</legend>
+            <div class="product" id="product">
+                <img src="5.webp" height="300px"><br>
+                <label class="prod-cost">$229</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Huawei Watch GT is a smartwatch developed by Huawei Technologies Co., Ltd.
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">Xiaomi Mi Watch</legend>
+            <div class="product" id="product">
+                <img src="6.webp" height="300px"><br>
+                <label class="prod-cost">$129</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Xiaomi Mi Watch is a smartwatch developed by Xiaomi Corporation.
+                </div>
+            </div>
+        </fieldset>
+        </div>
+        <div class="prod-row">
+        <fieldset class="Products">
+            <legend class="prod-name">Fossil Gen 5</legend>
+            <div class="product" id="product">
+                <img src="7.webp" height="300px"><br>
+                <label class="prod-cost">$295</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Fossil Gen 5 is a smartwatch developed by Fossil Group.
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">TicWatch Pro 3</legend>
+            <div class="product" id="product">
+                <img src="8.webp" height="300px"><br>
+                <label class="prod-cost">$299</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The TicWatch Pro 3 is a smartwatch developed by Mobvoi.
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">Garmin Venu Sq</legend>
+            <div class="product" id="product">
+                <img src="9.webp" height="300px"><br>
+                <label class="prod-cost">$199</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Garmin Venu Sq is a smartwatch developed by Garmin Ltd.
+                </div>
+            </div>
+        </fieldset>
+        </div>
+        <div class="prod-row">
+        <fieldset class="Products">
+            <legend class="prod-name">Amazfit Bip U</legend>
+            <div class="product" id="product">
+                <img src="10.webp" height="300px"><br>
+                <label class="prod-cost">$49</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Amazfit Bip U is a smartwatch developed by Huami.
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">Samsung Galaxy 2</legend>
+            <div class="product" id="product">
+                <img src="11.webp" height="300px"><br>
+                <label class="prod-cost">$249</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Samsung Galaxy Watch Active 2 is a smartwatch developed by Samsung Electronics.
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="Products">
+            <legend class="prod-name">Huawei Watch Fit</legend>
+            <div class="product" id="product">
+                <img src="12.webp" height="300px"><br>
+                <label class="prod-cost">$129</label>
+                <input type="number" class="quan" id="quan" min = 0>
+                <div class="prod-tool-tip">
+                    The Huawei Watch Fit is a smartwatch developed by Huawei Technologies Co., Ltd.
+                </div>
+            </div>
+        </fieldset>
+        </div>
+    </div>
+    <div class = "sub-btn">
+        <button onclick = "calculate_invoice()">Calculate Invoice</button>
+    </div>
+    <div id = "invoice">
+        
+
+    </div>
+
+    <div id = "invoice-final">
+
+    </div>
+    <script>
+        function calculate_invoice(){
+            event.preventDefault();
+
+            var count = 0;
+            var bill = 0;
+            const invoice = document.getElementById('invoice');
+            const products = document.getElementsByClassName('Products');
+            console.log(products);
+            for(p of products) {
+                var product = p.children[1];
+                
+                var cost = parseInt(product.children[2].innerHTML.slice(1)); 
+                var quan = product.children[3].value;
+                
+                
+                if(!quan == "" | !quan == 0){
+                    console.log(quan);
+                    quan = parseInt(quan);
+                    count++;
+
+                    invoice.innerHTML += "<div>"+p.children[0].innerHTML + "</div><div>" + 
+                    product.children[2].innerHTML +"</div><div>" +
+                    product.children[3].value + "</div><div>$" +
+                    quan*cost + "</div>";
+
+                    bill += (cost*quan);
+                }
+ 
+            };
+            var discount = 0;
+            if (count >= 3){discount= 5;}
+            else if(count >= 7){discount = 10;}
+            else if(discount >= 10){discount = 15;}
+
+            console.log(bill);
+            const invoice_final = document.getElementById('invoice-final');
+            invoice_final.innerHTML = "Total: $"+bill + "<br>";
+            invoice_final.innerHTML += "Discount: "+discount+"%<br>";
+            invoice_final.innerHTML += "Grand Total: $"+Math.ceil(bill*(1- discount*0.01));
+
+
+
+        }
+
+    </script>
+</body>
+</html>
